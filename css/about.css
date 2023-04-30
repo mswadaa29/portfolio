@@ -1,0 +1,543 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::-moz-selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: "capitana", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: var(--negro);
+  /* opcional */
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ABOUT CSS */
+
+/* HEADER ABOUT */
+
+  .Header-about{
+    margin: auto;
+    width: 100%;
+    height: 9vh;
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    background-color:#F2ECCF;
+    }
+    
+  .Header-wrapper{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    background-color: rgba(242, 236, 207, 0.3)
+    ;
+  }
+  
+  .Nav{
+    margin: auto;
+    color:#229C69 ;
+  
+    width: 90%;
+    animation: slideDown 2s ease 1 both;
+  }
+  @keyframes slideDown {
+    from{
+        transform: translateY(-100%);
+        opacity: 0;
+  
+    }
+    to{
+        transform: translateY(0%);
+        opacity: 1;
+  
+    }
+  }
+  .Nav-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content:space-between;
+    align-items: center;
+  }
+  .Nav-li{
+    position: relative;
+    font-family: "capitana", sans-serif;
+    font-weight: 400;
+    font-size: large;
+    font-style: normal;
+    color:#229C69 ;
+  }
+  a::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 0.125rem;
+    bottom: 0;
+    left: 0;
+    background-color: #229C69;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  .Nav-li a:hover::before {
+    transform: scaleX(1);
+  }
+
+  .Nav-li:active{
+      font-weight: 800;
+      font-style: normal;
+  }
+
+  .Nav-btn{
+      width: 4.8rem;
+      height: 5.3rem;
+  }
+               
+  .Div-mobile{
+      display: none;
+  }
+  main{
+      background-image:url(../assets/fundo.png) ;
+      background-color: #F2ECCF;
+      background-repeat: no-repeat;
+      background-size:contain;
+      background-position:center;
+      padding: 10rem 0rem 2rem 0rem;
+      height: 123vh;    
+  }
+  .About-container{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color:#717171;
+
+  }
+  .Card-container{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: 3s slide-right
+
+  }
+
+  .Img-container{
+    width: 100%;
+    height: 25rem;
+    animation: slide-right 2s ease;
+  }
+
+  @keyframes slide-right {
+    from {
+      transform:translatex(-100%);
+    }
+    to {
+      transform:translatex(0%);
+    }
+  }
+
+  .Div-container{
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: small;
+  }
+
+  .Title-container{
+    font-size:5rem;
+    font-family: "fit-wide", sans-serif;
+    font-weight: 400;
+    color:#0743ED;
+    padding-left: 1rem;
+    animation: slideDown ease 2s;
+  }
+
+
+  .P-container{
+    width: 100%;
+    padding: 1rem 2rem 0rem 1rem;
+    background-color: rgba(242, 236, 207, 0.6);
+    animation: slideUp ease 2s;
+    line-height: 1.5rem;
+  }
+  @keyframes slideUp{
+    from {
+      transform: translateY(100%);
+    }
+    to{
+      transform: translateY(0%);
+    }
+  }
+
+
+  .Tabs-Container{
+    margin: auto;
+    background: rgba(242, 236, 207, 0.2);
+    width: 70%;
+  }
+
+  .Tabs-btn{
+    width: 30%;
+    margin: auto;
+    padding: 1rem;
+    border: solid 0.18rem #E66308;
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+    background:#F2ECCF;
+    cursor: pointer;
+    font-size: small;
+    color:#717171;
+    animation: fadeIn ease 4s;
+  }
+  @keyframes fadeIn{
+    0% {
+      opacity:0;
+    }
+    100% {
+      opacity:1;
+    }
+  }
+
+  .Tabs-btn:hover{
+    background:#E66308;
+    color:#F2ECCF;
+
+  }
+  .Tabs-btn.isActive{
+    border: solid 0.18rem #E66308;
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+    color:#F2ECCF;
+    background:#E66308;
+  }
+
+  .Tabs-ul{
+    margin-top: 2rem;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:flex-start;
+    font-size: small;
+    color: #F2ECCF;
+
+  }
+
+  .Tabs-ul.isActive{
+    padding: 2rem;
+    opacity: 1;
+    display: flex;
+    color:#717171;
+    border: solid 0.18rem #E66308;
+    border-radius: 1.25rem 1.25rem 1.25rem 1.25rem;
+    background:#F2ECCF
+
+  }
+
+  .Span-tabs{
+    font-weight:800;
+    color:#717171;
+  }
+  .Container-loop{
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding-top:5rem ;
+
+  }
+  .Img-loop{
+    width: 150rem;
+    height:3.1rem ;
+    background-image: url(../assets/fitawork.jpg);
+    background-size: 100% 100%;
+    
+    animation: slide 30s linear infinite;
+  }
+
+  @keyframes slide {
+
+  to {
+      background-position: 150rem;
+  }
+
+  }
+
+/* Footer about */
+
+  .Footer{
+    margin: auto;
+    padding: 2rem;
+    background-color: #F2ECCF;
+  }
+  .Footer-wrapper{
+    margin: auto;
+    width: 90%;
+  
+  }
+  .Rs-ul{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  
+  
+  }
+  .Rs-li{
+    width: 1.875rem;
+    color: #229C69;
+  }
+  .Rs-li:hover{
+    transform: scale(1.2);
+    transition: all ease .5s;
+    color: #E66308;
+  
+  }
+
+  /* RESPONSIVE */
+
+
+  @media(max-width:1600px){
+    .P-container{
+      padding: 1rem 1rem 3rem 1rem;
+    }  
+  }
+ 
+  @media(max-width:1149px){
+    .About-container{
+      width: 80%;
+      margin: auto;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      color:#717171;
+    
+  }
+  .Tabs-btn{
+    width: 50%;
+  }
+  
+  }
+  @media(max-width:840px){
+    .About-container{
+      width: 90%;
+  
+    
+    }
+  }
+  @media(max-width:750px){
+    .About-container{
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+    }
+    main{
+      height: 150vh;    
+    }
+    .Nav{
+    display: none;
+    }
+    .Div-mobile{
+    position: fixed;
+    z-index: 1;
+    margin: auto;
+    width: 100%;
+    display: block;
+    background-color: rgba(242, 236, 207, 0.9);
+    }
+    .Nav-mobile{
+      display: none;
+    }
+    .Nav-mobile.isActive{
+      display: block;
+    }
+    .Btn-mobile{
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      width: 4.8rem;
+      height: 5.3rem;
+    }
+    .Ul-mobile{
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 0rem 2rem 0rem;
+    }
+    .Li-mobile{
+      font-family: "capitana", sans-serif;
+      font-weight: 400;
+      font-size: large;
+      font-style: normal;
+      color:#229C69 ;
+      padding-top: 2rem;
+      border-bottom: #bbbcbc 0.06rem solid;
+    }
+    .Tabs-btn{
+      width: 100%;
+    }
+  }
+
+  @media(max-width:577px){
+    main{
+      height: 170vh;      
+    }  
+    .Footer{
+      padding-top:4rem ;
+    }
+  }
+
+  @media(max-width:420px){
+    main{
+      height: 180vh;      
+      background-color:#F2ECCF;
+      background-image:url(../assets/backgroundmobile.png) ;
+      background-repeat:no-repeat;
+      background-size:contain;
+    }  
+    .Title-container{
+      font-size:3rem;
+
+    }
+    .Tabs-Container{
+      width: 90%;
+    }
+  }
+
+  @media(max-width:420px){
+    main{
+      height: 220vh;      
+    }  
+  }
